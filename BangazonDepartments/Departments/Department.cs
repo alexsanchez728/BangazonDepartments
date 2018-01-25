@@ -24,5 +24,6 @@ namespace BangazonDepartments.Departments
             Console.WriteLine($"We're going to eat at the {lunchSpot}");
         }
 
+        public abstract double SetBudget(double budget);
     }
 }

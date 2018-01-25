@@ -11,6 +11,8 @@ namespace BangazonDepartments
     {
         static void Main(string[] args)
         {
+            double baseBudget = 75000.00;
+
             var myHR = new HumanResources("Inhuman Resources", "3rd", 100);
             myHR.AddPolicy("Lorem Ipsum Policy", "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.");
 
@@ -25,9 +27,12 @@ namespace BangazonDepartments
                 myHR, myQA, myFrontEnd
             };
 
-            Console.WriteLine($"myCompary is comprised of {myCompany.Count} departments");
+            foreach (Department d in myCompany)
+            {
+                Console.WriteLine(d.SetBudget(baseBudget));
+            }
 
-            Console.WriteLine($"");
+            Console.WriteLine($"myCompary is comprised of {myCompany.Count} departments");
 
             Console.ReadKey();
         }

@@ -9,6 +9,7 @@ namespace BangazonDepartments.Departments
     class QualityAssurance : Department
     {
         private Dictionary<string, string> _bugReports = new Dictionary<string, string>();
+        private double Budget;
 
         public QualityAssurance(string dept_name, string floor, int employees) : base(dept_name, floor, employees)
         {
@@ -34,5 +35,6 @@ namespace BangazonDepartments.Departments
             Console.WriteLine($"We're going to eat at the {lunchSpot}, gotta do QA on their food.");
             }
         }
+        public override double SetBudget(double budget) => this.Budget += budget + 1000.00;
     }
 }

@@ -9,6 +9,7 @@ namespace BangazonDepartments.Departments
     class FrontEndDevs : Department
     {
         private Dictionary<string, string> _newFramework = new Dictionary<string, string>();
+        private double Budget;
 
         public FrontEndDevs(string dept_name, string floor, int employees) : base(dept_name, floor, employees)
         {
@@ -30,7 +31,7 @@ namespace BangazonDepartments.Departments
                 Console.WriteLine($"The front end devs brought {numberOfAlcohols} craft brews per person. Yieks.");
             }
             Console.WriteLine($"We're going to eat at the {lunchSpot}, totally sober");
-
         }
+        public override double SetBudget(double budget) => this.Budget += budget + 100000.00;
     }
 }

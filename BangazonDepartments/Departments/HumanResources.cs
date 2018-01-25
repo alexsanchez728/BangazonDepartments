@@ -9,6 +9,7 @@ namespace BangazonDepartments.Departments
     class HumanResources : Department
     {
         private Dictionary<string, string> _policies = new Dictionary<string, string>();
+        private double Budget;
 
         public HumanResources(string dept_name, string floor, int employees) : base(dept_name, floor, employees)
         {
@@ -31,7 +32,7 @@ namespace BangazonDepartments.Departments
                 Console.WriteLine($"The whole Human Resources department had a rough day and brought booze from home.");
             }
             Console.WriteLine($"We're going to eat at the {lunchSpot}, totally sober");
-
         }
+        public override double SetBudget(double budget) => this.Budget -= budget - 1000.00;
     }
 }
