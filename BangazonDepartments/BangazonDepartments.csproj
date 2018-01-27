@@ -45,7 +45,12 @@
     <Compile Include="Departments\Department.cs" />
     <Compile Include="Departments\FrontEndDevs.cs" />
     <Compile Include="Departments\HumanResources.cs" />
+    <Compile Include="Employment\IEmploymentLength.cs" />
+    <Compile Include="Employment\IFullTime.cs" />
+    <Compile Include="Employment\IPartTime.cs" />
     <Compile Include="Departments\QualityAssurance.cs" />
+    <Compile Include="Locations\IAtEastside.cs" />
+    <Compile Include="Locations\IAtWestside.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

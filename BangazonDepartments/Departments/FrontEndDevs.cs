@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BangazonDepartments.Employment;
+using BangazonDepartments.Locations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +8,38 @@ using System.Threading.Tasks;
 
 namespace BangazonDepartments.Departments
 {
-    class FrontEndDevs : Department
+    class FrontEndDevs : Department, IPartTime, IAtWestside, IEmploymentLength
     {
         private Dictionary<string, string> _newFramework = new Dictionary<string, string>();
         private double Budget;
+        private double _houryRate;
+        private bool _keyCardAccess;
+        private string _contractLength;
 
-        public FrontEndDevs(string dept_name, string floor, int employees) : base(dept_name, floor, employees)
+        public FrontEndDevs(string dept_name, string floor, int employees, string contractLength) : base(dept_name, floor, employees, contractLength)
         {
         }
+
+        public double HourlyRate
+        {
+            get => _houryRate;
+            set
+            {
+                if (value >= 10 && value <= 35)
+                {
+                    _houryRate = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Cannot set hourly rate to specified value.");
+                }
+            }
+        }
+
+        public bool KeycardAccess => _keyCardAccess;
+
+        public string ContractLength => _contractLength;
+
         public void AddNewFramework(string framework, string howCool)
         {
             _newFramework.Add(framework, howCool);
